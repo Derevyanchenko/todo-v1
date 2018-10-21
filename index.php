@@ -28,7 +28,7 @@
                    <h1>All tasks</h1>
                </div>
                <div class="col-lg-12">
-                   <a href="create.html" class="btn btn-success">Add task</a>
+                   <a href="create.php" class="btn btn-success">Add task</a>
                 </div>
                 <div class="col-lg-12">
                     <table class="table">
@@ -45,9 +45,9 @@
                                 <td><?=$task["id"];?></td>
                                 <td><?= $task["title"]; ?></td>
                                 <td>
-                                    <a href="single.html" class="btn btn-primary">view</a>
-                                    <a href="edit.html" class="btn btn-warning">edit</a>
-                                    <a href="delete.html" class="btn btn-danger">delete</a>
+                                    <a href="single.php" class="btn btn-primary">view</a>
+                                    <a href="edit.php" class="btn btn-warning">edit</a>
+                                    <a href="delete.php" class="btn btn-danger">delete</a>
                                 </td>
                             </tr>
                             <?php endforeach; ?>
