@@ -47,7 +47,7 @@
                                 <td>
                                     <a href="single.php?id=<?=$task["id"];?>" class="btn btn-primary">view</a>
                                     <a href="edit.php?id=<?=$task["id"];?>" class="btn btn-warning">edit</a>
-                                    <a href="delete.php?id=<?=$task["id"];?>" class="btn btn-danger">delete</a>
+                                    <a href="delete.php?id=<?=$task["id"];?>" onclick="return confirm('Are you sure?');" class="btn btn-danger">delete</a>
                                 </td>
                             </tr>
                             <?php endforeach; ?>
