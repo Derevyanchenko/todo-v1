@@ -1,3 +1,16 @@
+<?php 
+
+$pdo = new PDO("mysql:host=localhost;dbname=tasks_bd",root,"");
+$sql ="SELECT * FROM `tasks` WHERE id=:id";
+$statement=$pdo->prepare($sql);
+$statement->bindParam(":id", $_GET["id"]);
+$statement->execute();
+
+$tasks = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,17 +27,21 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h1>Edit Task</h1>
-                    <form action="update.php">
+                   <?php foreach($tasks as $task): ?>
+
+                    <form action="update.php?id=<?=$task["id"];?>" method="POST"> 
                         <div class="form-group">
                           <label for="title">Title:</label>
-                          <input type="text" class="form-control" id="title" value="title">
+                          <input type="text" class="form-control" name="title" id="title" value="<?=$task["title"];?>">
                         </div>
                         <div class="form-group">
                             <label for="content">Content:</label>
-                            <textarea name="" id="" cols="30" rows="10" id="content" class="form-control" >Content</textarea>
+                            <textarea name="content" id="" cols="30" rows="10" id="content" class="form-control"><?=$task["content"];?></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
+
+                   <?php endforeach; ?>
                 </div>
             </div>
         </div>
