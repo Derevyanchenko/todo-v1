@@ -1,0 +1,12 @@
+.wrapper {
+    padding-top: 50px;
+}
+h1 {
+    font-size: 60px;
+}
+.table {
+    margin-top: 50px;
+}
+.table td a {
+    margin: 0 5px;
+}
