@@ -1,5 +1,11 @@
 <?php 
-    echo "Hello world";
+   $pdo = new PDO('mysql:host=localhost;dbname=tasks_bd', root, "");
+   $sql = "SELECT * FROM `tasks`";
+   $statement = $pdo->prepare($sql);
+   $statement -> execute();
+   $tasks = $statement -> fetchAll(PDO::FETCH_ASSOC);
+ 
+   
 ?>
 
 <!DOCTYPE html>
@@ -34,15 +40,17 @@
                           </tr>
                         </thead>
                         <tbody>
-                          <tr>
-                            <td>1</td>
-                            <td>first task</td>
-                            <td>
-                                <a href="single.html" class="btn btn-primary">view</a>
-                                <a href="edit.html" class="btn btn-warning">edit</a>
-                                <a href="delete.html" class="btn btn-danger">delete</a>
-                            </td>
-                          </tr>
+                            <?php foreach($tasks as $task):?>
+                            <tr>
+                                <td><?=$task["id"];?></td>
+                                <td><?= $task["title"]; ?></td>
+                                <td>
+                                    <a href="single.html" class="btn btn-primary">view</a>
+                                    <a href="edit.html" class="btn btn-warning">edit</a>
+                                    <a href="delete.html" class="btn btn-danger">delete</a>
+                                </td>
+                            </tr>
+                            <?php endforeach; ?>
                         </tbody>
                     <table>
                 </div>
