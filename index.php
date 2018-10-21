@@ -45,9 +45,9 @@
                                 <td><?=$task["id"];?></td>
                                 <td><?= $task["title"]; ?></td>
                                 <td>
-                                    <a href="single.php" class="btn btn-primary">view</a>
-                                    <a href="edit.php" class="btn btn-warning">edit</a>
-                                    <a href="delete.php" class="btn btn-danger">delete</a>
+                                    <a href="single.php?id=<?=$task["id"];?>" class="btn btn-primary">view</a>
+                                    <a href="edit.php?id=<?=$task["id"];?>" class="btn btn-warning">edit</a>
+                                    <a href="delete.php?id=<?=$task["id"];?>" class="btn btn-danger">delete</a>
                                 </td>
                             </tr>
                             <?php endforeach; ?>
