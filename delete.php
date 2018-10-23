@@ -1,11 +1,8 @@
 <?php 
 
-$pdo = new PDO("mysql:host=localhost;dbname=tasks_bd", root, "");
+require "database/querybuilder.php";
 
-$sql = "DELETE FROM `tasks` WHERE id=:id";
-$statement = $pdo->prepare($sql);
-$statement -> bindParam(":id", $_GET["id"]);
-$statement -> execute();
+delete($_GET["id"]);
 
 header("Location: /");
 
