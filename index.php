@@ -4,7 +4,8 @@
 
     $db = new query_builder;
 
-    $tasks = $db->get_all_tasks();
+    $tasks = $db->get_all("tasks");
+
 
  
 ?>

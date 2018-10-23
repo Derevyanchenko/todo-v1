@@ -9,7 +9,7 @@ $data = [
 ];
 $db = new query_builder();
 
-$db->update($data);
+$db->update("tasks" ,$data);
 
 header("Location: /");
 

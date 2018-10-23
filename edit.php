@@ -4,7 +4,7 @@ require "database/querybuilder.php";
 
 $db = new query_builder();
 
-$tasks = $db->get_one_task($_GET["id"]);
+$tasks = $db->get_one("tasks", $_GET["id"]);
 
 
 ?>

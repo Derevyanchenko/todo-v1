@@ -4,7 +4,7 @@ require "database/querybuilder.php";
 
 $db = new query_builder();
 
-$db->delete($_GET["id"]);
+$db->delete("tasks" ,$_GET["id"]);
 
 header("Location: /");
 
