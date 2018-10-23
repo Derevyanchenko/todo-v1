@@ -2,7 +2,9 @@
 
 require "database/querybuilder.php";
 
-delete($_GET["id"]);
+$db = new query_builder();
+
+$db->delete($_GET["id"]);
 
 header("Location: /");
 

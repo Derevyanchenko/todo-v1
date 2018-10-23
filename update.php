@@ -7,8 +7,9 @@ $data = [
     "title" => $_POST["title"],
     "content" => $_POST["content"]
 ];
+$db = new query_builder();
 
-update($data);
+$db->update($data);
 
 header("Location: /");
 

@@ -2,7 +2,9 @@
 
     require "database/querybuilder.php";
 
-    $tasks = get_all_tasks();
+    $db = new query_builder;
+
+    $tasks = $db->get_all_tasks();
 
  
 ?>
