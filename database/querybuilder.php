@@ -27,6 +27,16 @@ class query_builder {
     
         return $tasks;
     }
+
+    public function add()
+    {
+        $sql = "INSERT INTO `tasks` (title, content) VALUES (:title, :content)";
+        $statement = $this->pdo->prepare($sql);
+        $statement->bindParam(":title", $_POST["title"]);
+        $statement->bindParam(":content", $_POST["content"]);
+        $statement->execute();
+        header("Location: /"); exit;
+    }
     
     function update($table, $data) { 
         $sql = "UPDATE $table SET title=:title, content=:content WHERE id=:id";

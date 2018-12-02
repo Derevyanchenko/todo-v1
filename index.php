@@ -1,12 +1,15 @@
 <?php 
 
     require "database/querybuilder.php";
+    require "components/auth.php";
 
     $db = new query_builder;
 
     $tasks = $db->get_all("tasks");
 
+    $auth = new Auth;
 
+/*    $auth->register("danil@gmail.com", qwerty123);*/
  
 ?>
 
@@ -25,6 +28,7 @@
 
    <div class="wrapper">
        <div class="container">
+        <a href="register.php" class="register">Зарегестрироваться</a>
            <div class="row">
                <div class="col-lg-12">
                    <h1>All tasks</h1>
