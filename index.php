@@ -1,5 +1,10 @@
 <?php 
 
+
+if(!session_status()) {
+  session_start();
+}
+
     require "database/querybuilder.php";
     require "components/auth.php";
 
@@ -10,6 +15,7 @@
     $auth = new Auth;
 
 /*    $auth->register("danil@gmail.com", qwerty123);*/
+
  
 ?>
 
@@ -29,12 +35,13 @@
    <div class="wrapper">
        <div class="container">
         <a href="register.php" class="register">Зарегестрироваться</a>
+        <a href="login.php" class="login">Войти</a>
            <div class="row">
                <div class="col-lg-12">
                    <h1>All tasks</h1>
                </div>
                <div class="col-lg-12">
-                   <a href="create.php" class="btn btn-success">Add task</a>
+                   <a href="addTask" class="btn btn-success">Add task</a>
                 </div>
                 <div class="col-lg-12">
                     <table class="table">
